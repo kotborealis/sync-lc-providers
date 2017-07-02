@@ -26,7 +26,8 @@ describe('ProviderYoutubeList', () => {
                     thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
                     url: 'https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
                     type: 'youtube',
-                    id: 'PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U'
+                    id: 'PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
+                    disableTiming: true
                 }).to.deep.equal(entity);
                 done();
             }).catch(reason => expect(reason).to.be(null));
@@ -54,7 +55,8 @@ describe('ProviderYoutubeList', () => {
                         thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
                         url: 'https://www.youtube.com/watch?v=XgoAVRdj1HI',
                         type: 'youtube',
-                        id: 'XgoAVRdj1HI'
+                        id: 'XgoAVRdj1HI',
+                        disableTiming: false
                     },
                     {
                         duration: 93,
@@ -62,7 +64,8 @@ describe('ProviderYoutubeList', () => {
                         thumbnail: 'https://i.ytimg.com/vi/nPQ2K1qmUoY/default.jpg',
                         url: 'https://www.youtube.com/watch?v=nPQ2K1qmUoY',
                         type: 'youtube',
-                        id: 'nPQ2K1qmUoY'
+                        id: 'nPQ2K1qmUoY',
+                        disableTiming: false
                     }
                 ]).to.deep.equal(entities);
                 done();

@@ -29,7 +29,8 @@ describe('ProviderYoutube', () => {
                     thumbnail: 'https://i.ytimg.com/vi/iNCRfh6dx60/default.jpg',
                     url: 'https://www.youtube.com/watch?v=iNCRfh6dx60',
                     type: 'youtube',
-                    id: 'iNCRfh6dx60'
+                    id: 'iNCRfh6dx60',
+                    disableTiming: false
                 }).to.deep.equal(entity);
                 done();
             }).catch(reason => {
@@ -67,7 +68,8 @@ describe('ProviderYoutube', () => {
                     thumbnail: 'https://i.ytimg.com/vi/iNCRfh6dx60/default.jpg',
                     url: 'https://www.youtube.com/watch?v=iNCRfh6dx60',
                     type: 'youtube',
-                    id: 'iNCRfh6dx60'
+                    id: 'iNCRfh6dx60',
+                    disableTiming: false
                 }).to.deep.equal(entity);
                 done();
             }).catch(reason => {
