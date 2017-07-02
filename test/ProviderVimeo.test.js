@@ -1,5 +1,5 @@
-const ProviderVimeo = require('../lib/ProviderVimeo');
-const EntityVimeo = require('../lib/EntityVimeo');
+const ProviderVimeo = require('../lib/providers/ProviderVimeo');
+const EntityVimeo = require('../lib/entities/EntityVimeo');
 
 const expect = require('chai').expect;
 
