@@ -34,23 +34,4 @@ describe('ProviderTwitchStream', () => {
             });
         });
     });
-
-    describe('entities', () => {
-        it('should return Stream info', (done) => {
-            twitch.entities('kotborealis').then(entity => {
-                expect({
-                    duration: null,
-                    title: '[Next Car Game Free Technology Demo] KotBorealis',
-                    thumbnail: null,
-                    url: 'https://www.twitch.tv/kotborealis',
-                    type: 'twitch-stream',
-                    id: 'kotborealis',
-                    disableTiming: true
-                }).to.deep.equal(entity);
-                done();
-            }).catch(reason => {
-                throw new Error(reason);
-            });
-        });
-    });
 });

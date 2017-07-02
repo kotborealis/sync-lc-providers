@@ -58,43 +58,4 @@ describe('ProviderYoutube', () => {
             });
         });
     });
-
-    describe('entities', () => {
-        it('should return promise with video info', (done) => {
-            youtube.entities('iNCRfh6dx60').then(entity => {
-                expect({
-                    duration: 195,
-                    title: 'ChunnHEbyou',
-                    thumbnail: 'https://i.ytimg.com/vi/iNCRfh6dx60/default.jpg',
-                    url: 'https://www.youtube.com/watch?v=iNCRfh6dx60',
-                    type: 'youtube',
-                    id: 'iNCRfh6dx60',
-                    disableTiming: false
-                }).to.deep.equal(entity);
-                done();
-            }).catch(reason => {
-                done();
-                throw new Error(reason);
-            });
-        });
-
-
-        it('should reject non-existing videos', (done) => {
-            youtube.entities('asswecan').then(entity => {
-                done();
-            }).catch(reason => {
-                expect("Not Found").to.equal(reason);
-                done();
-            });
-        });
-
-        it('should reject non-embeddable videos', (done) => {
-            youtube.entities('https://youtu.be/E-68IxmGaoA').then(entity => {
-                done();
-            }).catch(reason => {
-                expect("Not Embeddable").to.equal(reason);
-                done();
-            });
-        });
-    });
 });
