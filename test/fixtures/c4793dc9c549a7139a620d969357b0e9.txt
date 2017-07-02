@@ -1,0 +1,56 @@
+{
+ "kind": "youtube#playlistListResponse",
+ "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/Q1hGmGDgkK0yhAt2jaV93Lr456Q\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 5
+ },
+ "items": [
+  {
+   "kind": "youtube#playlist",
+   "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/drumAnHrigUyqzoqXSoCEskKKiU\"",
+   "id": "PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U",
+   "snippet": {
+    "publishedAt": "2017-07-02T13:23:14.000Z",
+    "channelId": "UCQ8PDMlMt4r-YK672QitWlQ",
+    "title": "sync-lc-providers-test",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Cirno Strongest",
+    "localized": {
+     "title": "sync-lc-providers-test",
+     "description": ""
+    }
+   },
+   "contentDetails": {
+    "itemCount": 2
+   }
+  }
+ ]
+}

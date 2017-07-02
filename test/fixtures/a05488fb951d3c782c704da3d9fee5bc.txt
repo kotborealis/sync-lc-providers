@@ -1,0 +1,70 @@
+{
+ "kind": "youtube#videoListResponse",
+ "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/VD4uNH5gwScSBjyvWVfKzJUvK84\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 1
+ },
+ "items": [
+  {
+   "kind": "youtube#video",
+   "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/RR3AwWb4wiuWxguYjz78I4Kyen0\"",
+   "id": "XgoAVRdj1HI",
+   "snippet": {
+    "publishedAt": "2017-02-28T19:11:44.000Z",
+    "channelId": "UCQ8PDMlMt4r-YK672QitWlQ",
+    "title": "Bonetrousleを食べたら・・・",
+    "description": "nicovideo.jp/watch/sm30554656",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/XgoAVRdj1HI/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Cirno Strongest",
+    "categoryId": "22",
+    "liveBroadcastContent": "none",
+    "localized": {
+     "title": "Bonetrousleを食べたら・・・",
+     "description": "nicovideo.jp/watch/sm30554656"
+    }
+   },
+   "contentDetails": {
+    "duration": "PT1M",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": false,
+    "projection": "rectangular"
+   },
+   "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true
+   }
+  }
+ ]
+}

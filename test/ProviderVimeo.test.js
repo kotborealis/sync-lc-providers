@@ -4,6 +4,9 @@ const EntityVimeo = require('../lib/entities/EntityVimeo');
 const expect = require('chai').expect;
 
 describe('ProviderVimeo', () => {
+    before(() => require('../lib/request_fixture').__fake = true);
+    after(() => require('../lib/request_fixture').__fake = false);
+
     const Vimeo = new ProviderVimeo();
 
     describe('id', () => {
@@ -19,7 +22,6 @@ describe('ProviderVimeo', () => {
     describe('info', () => {
         it('should return video info', (done) => {
             Vimeo.info('115495563').then(entity => {
-                console.log(entity);
                 expect({
                     duration: 230,
                     title: '[MAD] JoJo\'s Bizarre Adventure - Part 4 - Diamond is Unbreakable',

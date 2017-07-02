@@ -8,6 +8,9 @@ process.on('unhandledRejection', (reason, p) => {
 });
 
 describe('ProviderFlie', () => {
+    before(() => require('../lib/ffprobe_fixture').__fake = true);
+    after(() => require('../lib/ffprobe_fixture').__fake = false);
+
     const file = new ProviderFile();
     const file_url = 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3';
 

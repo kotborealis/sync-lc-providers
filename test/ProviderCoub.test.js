@@ -4,6 +4,9 @@ const EntityCoub = require('../lib/entities/EntityCoub');
 const expect = require('chai').expect;
 
 describe('ProviderCoub', () => {
+    before(() => require('../lib/request_fixture').__fake = true);
+    after(() => require('../lib/request_fixture').__fake = false);
+
     const coub = new ProviderCoub();
 
     describe('id', () => {

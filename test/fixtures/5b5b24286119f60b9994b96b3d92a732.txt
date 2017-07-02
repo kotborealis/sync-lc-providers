@@ -1,0 +1,94 @@
+{
+ "kind": "youtube#videoListResponse",
+ "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/c6jQarvYkQRO4jeH-_4Fyzzmiws\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 1
+ },
+ "items": [
+  {
+   "kind": "youtube#video",
+   "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/LIUnbme97Y-bMFwxxRKFTJio6xM\"",
+   "id": "iNCRfh6dx60",
+   "snippet": {
+    "publishedAt": "2015-10-09T00:38:20.000Z",
+    "channelId": "UC_X0XrTBSEBlZbc9Ho492-Q",
+    "title": "ChunnHEbyou",
+    "description": "I promise you that this will be the last mashup that will use the DK Rap for awhile. xDD\n\nAnyways, Chunnibyou! It's a great anime and you should totally give it a shot! Hell, one of my close friends is making a fandub of it! ^0^ (I play Makoto) Anyways, I hope you enjoy this dong expanding mashup featuring Lanky Kong! ^-^\n\nSongs used:\nInside Identity (Love, Chunibyou and Other Delusions)\nDK Rap (Donkey Kong 64)\n\nGoogle+: https://plus.google.com/b/103804732399819310073/103804732399819310073/posts\nPhantasm Abridged: https://www.youtube.com/channel/UC-_wk8hJYpa_5S_C8JQs7KA?guided_help_flow=3\nFacebook: https://www.facebook.com/SonicStardustFantasy\ndeviantART: http://thewegeemaster.deviantart.com/#\nCasting Call Club: https://castingcall.club/m/sonicscarlet\nSoundCloud: https://soundcloud.com/thevioletdevil\nSkype: thegreenthunder12\n\n\nFair use:\nSection 107 of the Copyright Law allows for the \"fair use\" \nof a copyrighted work for purposes such as criticism, comment, \nnews reporting, teaching, scholarship, or research. \nAdditional guidelines (H.R. Rep. No. 94-1476, and \nThe United States Copyright Law: A Guide for Music Educators) \npermit multiple copies for classroom use under certain circumstances.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/iNCRfh6dx60/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/iNCRfh6dx60/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/iNCRfh6dx60/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/iNCRfh6dx60/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/iNCRfh6dx60/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Violet",
+    "tags": [
+     "Mashup (Media Genre)",
+     "Chunnibyou",
+     "anime",
+     "Anime mashup",
+     "inside identity",
+     "dk rap",
+     "expand dong",
+     "Donkey Kong (Video Game)",
+     "what is love",
+     "he has no style",
+     "coconut cream pies",
+     "memes",
+     "420",
+     "sanic",
+     "gotta go fast",
+     "nintendo",
+     "sega",
+     "namco",
+     "capcom",
+     "Hiphop",
+     "R&b",
+     "lanky kong"
+    ],
+    "categoryId": "24",
+    "liveBroadcastContent": "none",
+    "localized": {
+     "title": "ChunnHEbyou",
+     "description": "I promise you that this will be the last mashup that will use the DK Rap for awhile. xDD\n\nAnyways, Chunnibyou! It's a great anime and you should totally give it a shot! Hell, one of my close friends is making a fandub of it! ^0^ (I play Makoto) Anyways, I hope you enjoy this dong expanding mashup featuring Lanky Kong! ^-^\n\nSongs used:\nInside Identity (Love, Chunibyou and Other Delusions)\nDK Rap (Donkey Kong 64)\n\nGoogle+: https://plus.google.com/b/103804732399819310073/103804732399819310073/posts\nPhantasm Abridged: https://www.youtube.com/channel/UC-_wk8hJYpa_5S_C8JQs7KA?guided_help_flow=3\nFacebook: https://www.facebook.com/SonicStardustFantasy\ndeviantART: http://thewegeemaster.deviantart.com/#\nCasting Call Club: https://castingcall.club/m/sonicscarlet\nSoundCloud: https://soundcloud.com/thevioletdevil\nSkype: thegreenthunder12\n\n\nFair use:\nSection 107 of the Copyright Law allows for the \"fair use\" \nof a copyrighted work for purposes such as criticism, comment, \nnews reporting, teaching, scholarship, or research. \nAdditional guidelines (H.R. Rep. No. 94-1476, and \nThe United States Copyright Law: A Guide for Music Educators) \npermit multiple copies for classroom use under certain circumstances."
+    }
+   },
+   "contentDetails": {
+    "duration": "PT3M15S",
+    "dimension": "2d",
+    "definition": "hd",
+    "caption": "false",
+    "licensedContent": false,
+    "projection": "rectangular"
+   },
+   "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true
+   }
+  }
+ ]
+}

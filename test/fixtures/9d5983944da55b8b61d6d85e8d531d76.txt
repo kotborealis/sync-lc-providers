@@ -1,0 +1,17 @@
+{
+    "format": {
+        "filename": "https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.000000",
+        "duration": "122.880000",
+        "size": "1966112",
+        "bit_rate": "128002",
+        "probe_score": 51,
+        "tags": {
+            "encoded_by": "Lavf52.23.1"
+        }
+    }
+}

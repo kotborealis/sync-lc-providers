@@ -5,6 +5,9 @@ const EntityYoutube = require('../lib/entities/EntityYoutube');
 const expect = require('chai').expect;
 
 describe('ProviderYoutubeList', () => {
+    before(() => require('../lib/request_fixture').__fake = true);
+    after(() => require('../lib/request_fixture').__fake = false);
+
     const youtube = new ProviderYoutubeList({key: 'AIzaSyDpRpBquRTLhmifkJdNM78QgqjD0SDpkIM'});
 
     describe('id', () => {

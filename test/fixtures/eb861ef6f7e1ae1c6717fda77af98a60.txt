@@ -1,0 +1,60 @@
+{
+ "kind": "youtube#videoListResponse",
+ "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/5MZLyHb09dLKrt0Te2mQMaB0Auw\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 1
+ },
+ "items": [
+  {
+   "kind": "youtube#video",
+   "etag": "\"m2yskBQFythfE4irbTIeOgYYfBU/QkS1pJoOtcvN1A98lG_KlgCFRUI\"",
+   "id": "nPQ2K1qmUoY",
+   "snippet": {
+    "publishedAt": "2017-02-26T13:24:12.000Z",
+    "channelId": "UCQ8PDMlMt4r-YK672QitWlQ",
+    "title": "Саигэцу",
+    "description": "nicovideo.jp/watch/sm29394089",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/nPQ2K1qmUoY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/nPQ2K1qmUoY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/nPQ2K1qmUoY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "Cirno Strongest",
+    "categoryId": "22",
+    "liveBroadcastContent": "none",
+    "localized": {
+     "title": "Саигэцу",
+     "description": "nicovideo.jp/watch/sm29394089"
+    }
+   },
+   "contentDetails": {
+    "duration": "PT1M33S",
+    "dimension": "2d",
+    "definition": "sd",
+    "caption": "false",
+    "licensedContent": false,
+    "projection": "rectangular"
+   },
+   "status": {
+    "uploadStatus": "processed",
+    "privacyStatus": "public",
+    "license": "youtube",
+    "embeddable": true,
+    "publicStatsViewable": true
+   }
+  }
+ ]
+}

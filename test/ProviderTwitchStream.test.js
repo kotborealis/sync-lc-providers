@@ -4,6 +4,9 @@ const EntityTwitchStream = require('../lib/entities/EntityTwitchStream');
 const expect = require('chai').expect;
 
 describe('ProviderTwitchStream', () => {
+    before(() => require('../lib/request_fixture').__fake = true);
+    after(() => require('../lib/request_fixture').__fake = false);
+
     const twitch = new ProviderTwitchStream({key: 'ikvwvcz0xv1bby8aq0asm24vqckidn'});
 
     describe('id', () => {
