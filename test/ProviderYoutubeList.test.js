@@ -1,0 +1,72 @@
+const ProviderYoutubeList = require('../lib/ProviderYoutubeList');
+const EntityYoutubeList = require('../lib/EntityYoutubeList');
+const EntityYoutube = require('../lib/EntityYoutube');
+
+const expect = require('chai').expect;
+
+describe('ProviderYoutubeList', () => {
+    const youtube = new ProviderYoutubeList({key: 'AIzaSyDpRpBquRTLhmifkJdNM78QgqjD0SDpkIM'});
+
+    describe('id', () => {
+        it('should parse id from url', () => {
+            expect('PLXoCDa_TqvTRPiH45mThc-5wOzL7I0xQm').to.equal(youtube.id('https://www.youtube.com/playlist?list=PLXoCDa_TqvTRPiH45mThc-5wOzL7I0xQm'));
+        });
+
+        it('should return id if it\'s already separated from url', () => {
+            expect('PLXoCDa_TqvTRPiH45mThc-5wOzL7I0xQm').to.equal(youtube.id('PLXoCDa_TqvTRPiH45mThc-5wOzL7I0xQm'));
+        });
+    });
+
+    describe('info', () => {
+        it('should return promise with list info', (done) => {
+            youtube.info('https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U').then(entity => {
+                expect({
+                    duration: null,
+                    title: 'sync-lc-providers-test',
+                    thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
+                    url: 'https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
+                    type: 'youtube',
+                    id: 'PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U'
+                }).to.deep.equal(entity);
+                done();
+            }).catch(reason => expect(reason).to.be(null));
+        });
+
+
+        it('should reject non-existing videos', (done) => {
+            youtube.info('asswecan').then(entity => {
+                expect(entity).to.be(null);
+                done();
+            }).catch(reason => {
+                expect("Not Found").to.equal(reason);
+                done();
+            });
+        });
+    });
+
+    describe('entities', function(){
+        it('should return array of list entities', function(done){
+            youtube.entities('https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U').then(entities => {
+                expect([
+                    {
+                        duration: 60,
+                        title: 'Bonetrousleを食べたら・・・',
+                        thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
+                        url: 'https://www.youtube.com/watch?v=XgoAVRdj1HI',
+                        type: 'youtube',
+                        id: 'XgoAVRdj1HI'
+                    },
+                    {
+                        duration: 93,
+                        title: 'Саигэцу',
+                        thumbnail: 'https://i.ytimg.com/vi/nPQ2K1qmUoY/default.jpg',
+                        url: 'https://www.youtube.com/watch?v=nPQ2K1qmUoY',
+                        type: 'youtube',
+                        id: 'nPQ2K1qmUoY'
+                    }
+                ]).to.deep.equal(entities);
+                done();
+            }).catch(reason => expect(reason).to.be(null));
+        });
+    });
+});
