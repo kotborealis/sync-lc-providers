@@ -28,7 +28,7 @@ describe('ProviderYoutubeList', () => {
                     title: 'sync-lc-providers-test',
                     thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
                     url: 'https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
-                    type: 'youtube',
+                    type: 'youtubeList',
                     id: 'PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
                     disableTiming: true
                 }).to.deep.equal(entity);

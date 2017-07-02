@@ -27,7 +27,7 @@ describe('ProviderTwitchStream', () => {
                     title: '[Next Car Game Free Technology Demo] KotBorealis',
                     thumbnail: null,
                     url: 'https://www.twitch.tv/kotborealis',
-                    type: 'twitch-stream',
+                    type: 'twitchStream',
                     id: 'kotborealis',
                     disableTiming: true
                 }).to.deep.equal(entity);
