@@ -19,7 +19,6 @@ describe('ProviderTwitchStream', () => {
     describe('info', () => {
         it('should return Stream info', (done) => {
             twitch.info('kotborealis').then(entity => {
-                console.log(entity);
                 expect({
                     duration: null,
                     title: '[Next Car Game Free Technology Demo] KotBorealis',
