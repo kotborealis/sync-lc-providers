@@ -43,6 +43,19 @@ describe('ProviderFlie', () => {
             });
         });
 
+        it('should return video info', (done) => {
+            file.info('https://nico.awooo.ru/files/目力先輩BB.30519482.mp4').then(entity => {
+                expect({ duration: 10,
+                    title: '目力先輩BB.30519482.mp4',
+                    thumbnail: null,
+                    url: 'https://nico.awooo.ru/files/目力先輩BB.30519482.mp4',
+                    id: 'https://nico.awooo.ru/files/目力先輩BB.30519482.mp4',
+                    type: 'file',
+                    disableTiming: false }).to.deep.equal(entity);
+                done();
+            });
+        });
+
         it('should reject 404-videos', (done) => {
             file.info(file_url + "AAAAAAAAAAAAAAAAAAAA.mp3").catch(reason => {
                 expect(reason).to.equal("Not Found");
