@@ -26,6 +26,13 @@ describe('ProviderFlie', () => {
             //noinspection BadExpressionStatementJS
             expect(file.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
         });
+
+        it('should not parse invalid urls', () => {
+            //noinspection BadExpressionStatementJS
+            expect(file.id('http://faf.fof/ass.we.can.mp3.html')).to.be.null;
+            //noinspection BadExpressionStatementJS
+            expect(file.id('http://faf.fof/ass.we.can.mp3?asasas')).not.to.be.null;
+        });
     });
 
     describe('info', function(){
