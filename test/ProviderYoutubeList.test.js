@@ -1,6 +1,4 @@
 const ProviderYoutubeList = require('../lib/providers/ProviderYoutubeList');
-const EntityYoutubeList = require('../lib/entities/EntityYoutubeList');
-const EntityYoutube = require('../lib/entities/EntityYoutube');
 
 const expect = require('chai').expect;
 

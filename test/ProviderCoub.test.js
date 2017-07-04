@@ -1,5 +1,4 @@
 const ProviderCoub = require('../lib/providers/ProviderCoub');
-const EntityCoub = require('../lib/entities/EntityCoub');
 
 const expect = require('chai').expect;
 

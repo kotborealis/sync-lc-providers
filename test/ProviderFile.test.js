@@ -1,5 +1,4 @@
 const ProviderFile = require('../lib/providers/ProviderFile');
-const EntityFile = require('../lib/entities/EntityFile');
 
 const expect = require('chai').expect;
 

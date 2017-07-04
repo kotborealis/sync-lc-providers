@@ -1,5 +1,4 @@
 const ProviderTwitchStream = require('../lib/providers/ProviderTwitchStream');
-const EntityTwitchStream = require('../lib/entities/EntityTwitchStream');
 
 const expect = require('chai').expect;
 
