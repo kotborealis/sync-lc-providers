@@ -45,6 +45,7 @@ describe('ProviderFlie', () => {
                     url: 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3',
                     type: 'file',
                     disableTiming: false,
+                    meta: {isVideo: false},
                     id: 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3' }).to.deep.equal(entity);
                 done();
             });
@@ -58,6 +59,7 @@ describe('ProviderFlie', () => {
                     url: 'https://nico.awooo.ru/files/目力先輩BB.30519482.mp4',
                     id: 'https://nico.awooo.ru/files/目力先輩BB.30519482.mp4',
                     type: 'file',
+                    meta: {isVideo: true},
                     disableTiming: false }).to.deep.equal(entity);
                 done();
             });
