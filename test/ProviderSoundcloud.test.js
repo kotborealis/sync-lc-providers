@@ -17,13 +17,15 @@ describe('ProviderSoundcloud', () => {
     describe('info', () => {
         it('should return video info', (done) => {
             soundcloud.info('https://soundcloud.com/raxxo-1/ng-mare').then(entity => {
+                console.log(entity);
                 expect({ duration: 98,
                     title: 'NG Mare',
                     thumbnail: 'https://i1.sndcdn.com/artworks-000145582566-ihitj3-large.jpg',
                     url: 'https://soundcloud.com/raxxo-1/ng-mare',
                     id: 'https://soundcloud.com/raxxo-1/ng-mare',
                     type: 'soundcloud',
-                    disableTiming: false }).to.deep.equal(entity);
+                    disableTiming: false,
+                    meta: 'https://api.soundcloud.com/tracks/244947903/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' }).to.deep.equal(entity);
                 done();
             }).catch(reason => {
                 throw new Error(reason);
@@ -52,13 +54,15 @@ describe('ProviderSoundcloud', () => {
     describe('entities', () => {
         it('should return track entity', (done) => {
             soundcloud.entities('https://soundcloud.com/raxxo-1/ng-mare').then(entity => {
+                console.log(entity);
                 expect({ duration: 98,
                     title: 'NG Mare',
                     thumbnail: 'https://i1.sndcdn.com/artworks-000145582566-ihitj3-large.jpg',
                     url: 'https://soundcloud.com/raxxo-1/ng-mare',
                     id: 'https://soundcloud.com/raxxo-1/ng-mare',
                     type: 'soundcloud',
-                    disableTiming: false }).to.deep.equal(entity);
+                    disableTiming: false,
+                    meta: 'https://api.soundcloud.com/tracks/244947903/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' }).to.deep.equal(entity);
                 done();
             }).catch(reason => {
                 throw new Error(reason);
@@ -67,62 +71,71 @@ describe('ProviderSoundcloud', () => {
 
         it('should return playlist entities', (done) => {
             soundcloud.entities('https://soundcloud.com/dawn-records/sets/killove-fireproof').then(entity => {
+                console.log(entity);
                 expect([ { duration: 137,
                     title: 'KilLove Fireproof!',
                     thumbnail: null,
                     url: 'http://soundcloud.com/dawn-records/killove-fireproof',
                     id: 'http://soundcloud.com/dawn-records/killove-fireproof',
                     type: 'soundcloud',
-                    disableTiming: false },
+                    disableTiming: false,
+                    meta: 'https://api.soundcloud.com/tracks/299270767/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' },
                     { duration: 82,
                         title: 'EmotionaRhythm',
                         thumbnail: null,
                         url: 'http://soundcloud.com/dawn-records/emotionarhythm',
                         id: 'http://soundcloud.com/dawn-records/emotionarhythm',
                         type: 'soundcloud',
-                        disableTiming: false },
+                        disableTiming: false,
+                        meta: 'https://api.soundcloud.com/tracks/299270763/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' },
                     { duration: 84,
                         title: 'DANGO ON  FIRE',
                         thumbnail: null,
                         url: 'http://soundcloud.com/dawn-records/dango-on-fire',
                         id: 'http://soundcloud.com/dawn-records/dango-on-fire',
                         type: 'soundcloud',
-                        disableTiming: false },
+                        disableTiming: false,
+                        meta: 'https://api.soundcloud.com/tracks/299270772/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' },
                     { duration: 99,
                         title: '夜明けのウェアウルフ',
                         thumbnail: null,
                         url: 'http://soundcloud.com/dawn-records/2cdqufowurbd',
                         id: 'http://soundcloud.com/dawn-records/2cdqufowurbd',
                         type: 'soundcloud',
-                        disableTiming: false },
+                        disableTiming: false,
+                        meta: 'https://api.soundcloud.com/tracks/299270760/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' },
                     { duration: 120,
                         title: '死んだバラと悪魔のはなし',
                         thumbnail: null,
                         url: 'http://soundcloud.com/dawn-records/iypto5rgicya',
                         id: 'http://soundcloud.com/dawn-records/iypto5rgicya',
                         type: 'soundcloud',
-                        disableTiming: false },
+                        disableTiming: false,
+                        meta: 'https://api.soundcloud.com/tracks/299270810/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' },
                     { duration: 81,
                         title: 'SILVER STORM',
                         thumbnail: null,
                         url: 'http://soundcloud.com/dawn-records/silver-storm',
                         id: 'http://soundcloud.com/dawn-records/silver-storm',
                         type: 'soundcloud',
-                        disableTiming: false },
+                        disableTiming: false,
+                        meta: 'https://api.soundcloud.com/tracks/299270757/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' },
                     { duration: 95,
                         title: 'ライト・グラフィティ',
                         thumbnail: null,
                         url: 'http://soundcloud.com/dawn-records/fzmdykvfbrkw',
                         id: 'http://soundcloud.com/dawn-records/fzmdykvfbrkw',
                         type: 'soundcloud',
-                        disableTiming: false },
+                        disableTiming: false,
+                        meta: 'https://api.soundcloud.com/tracks/299270781/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' },
                     { duration: 85,
                         title: '雨の日に',
                         thumbnail: null,
                         url: 'http://soundcloud.com/dawn-records/9cs2qm0cd8wt',
                         id: 'http://soundcloud.com/dawn-records/9cs2qm0cd8wt',
                         type: 'soundcloud',
-                        disableTiming: false } ]).to.deep.equal(entity);
+                        disableTiming: false,
+                        meta: 'https://api.soundcloud.com/tracks/299270756/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' } ]).to.deep.equal(entity);
                 done();
             }).catch(reason => {
                 throw new Error(reason);
