@@ -16,6 +16,11 @@ describe('ProviderCoub', () => {
         it('should return id if it\'s already separated from url', () => {
             expect('ster').to.equal(coub.id('ster'));
         });
+
+        it('should not parse other urls', () => {
+            //noinspection BadExpressionStatementJS
+            expect(coub.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+        });
     });
 
     describe('info', () => {
