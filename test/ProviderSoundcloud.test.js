@@ -12,6 +12,11 @@ describe('ProviderSoundcloud', () => {
         it('should parse id from url', () => {
             expect('https://soundcloud.com/raxxo-1/ng-mare').to.equal(soundcloud.id('https://soundcloud.com/raxxo-1/ng-mare'));
         });
+
+        it('should not parse other urls', () => {
+            //noinspection BadExpressionStatementJS
+            expect(soundcloud.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+        });
     });
 
     describe('info', () => {

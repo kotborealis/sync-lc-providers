@@ -16,6 +16,11 @@ describe('ProviderVimeo', () => {
         it('should return id if it\'s already separated from url', () => {
             expect('115495563').to.equal(Vimeo.id('115495563'));
         });
+
+        it('should not parse other urls', () => {
+            //noinspection BadExpressionStatementJS
+            expect(Vimeo.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+        });
     });
 
     describe('info', () => {

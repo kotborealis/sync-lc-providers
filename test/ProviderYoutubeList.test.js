@@ -16,6 +16,11 @@ describe('ProviderYoutubeList', () => {
         it('should return id if it\'s already separated from url', () => {
             expect('PLXoCDa_TqvTRPiH45mThc-5wOzL7I0xQm').to.equal(youtube.id('PLXoCDa_TqvTRPiH45mThc-5wOzL7I0xQm'));
         });
+
+        it('should not parse other urls', () => {
+            //noinspection BadExpressionStatementJS
+            expect(youtube.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+        });
     });
 
     describe('info', () => {
