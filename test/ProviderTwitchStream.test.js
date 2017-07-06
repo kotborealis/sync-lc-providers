@@ -13,10 +13,6 @@ describe('ProviderTwitchStream', () => {
             expect('ster').to.equal(twitch.id('https://twitch.tv/ster'));
         });
 
-        it('should return id if it\'s already separated from url', () => {
-            expect('ster').to.equal(twitch.id('ster'));
-        });
-
         it('should not parse other urls', () => {
             //noinspection BadExpressionStatementJS
             expect(twitch.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
@@ -25,7 +21,8 @@ describe('ProviderTwitchStream', () => {
 
     describe('info', () => {
         it('should return Stream info', (done) => {
-            twitch.info('kotborealis').then(entity => {
+            twitch.info('http://twitch.tv/kotborealis').then(entity => {
+                console.log(entity);
                 expect({
                     duration: null,
                     title: '[Next Car Game Free Technology Demo] KotBorealis',

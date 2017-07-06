@@ -15,11 +15,6 @@ describe('ProviderYoutube', () => {
             expect('dBbQMXuFM9w').to.equal(youtube.id('https://youtu.be/dBbQMXuFM9w?list=PLXoCDa_TqvTRPiH45mThc-5wOzL7I0xQm'));
             expect('E-68IxmGaoA').to.equal(youtube.id('https://youtu.be/E-68IxmGaoA'));
         });
-
-        it('should return id if it\'s already separated from url', () => {
-            expect('dBbQMXuFM9w').to.equal(youtube.id('dBbQMXuFM9w'));
-            expect('iNCRfh6dx60').to.equal(youtube.id('iNCRfh6dx60'));
-        });
     });
 
     describe('info', () => {
