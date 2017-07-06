@@ -1,0 +1,1 @@
+console.log('(' + Object.keys(require('../')).map(i => require('../')[i]).map(i => new i).map(i => i.re).map(i => i.source).map(i => '(' + i + ')').join('|').replace(/\^|\$/g, '') + ')');
