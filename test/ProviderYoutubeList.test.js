@@ -33,7 +33,8 @@ describe('ProviderYoutubeList', () => {
                     url: 'https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
                     type: 'youtubeList',
                     id: 'PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
-                    disableTiming: true
+                    disableTiming: true,
+                    meta: {count: 2}
                 }).to.deep.equal(entity);
                 done();
             }).catch(reason => expect(reason).to.be(null));
