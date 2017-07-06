@@ -37,6 +37,22 @@ describe('ProviderSoundcloud', () => {
             });
         });
 
+        it('should return video info', (done) => {
+            soundcloud.info('https://soundcloud.com/dawn-records/killove-fireproof?in=dawn-records/sets/killove-fireproof').then(entity => {
+                expect({ duration: 137,
+                    title: 'KilLove Fireproof!',
+                    thumbnail: 'https://i1.sndcdn.com/avatars-000041548876-hex4yq-large.jpg',
+                    url: 'https://soundcloud.com/dawn-records/killove-fireproof?in=dawn-records/sets/killove-fireproof',
+                    id: 'https://soundcloud.com/dawn-records/killove-fireproof?in=dawn-records/sets/killove-fireproof',
+                    type: 'soundcloud',
+                    disableTiming: false,
+                    meta: 'https://api.soundcloud.com/tracks/299270767/stream?client_id=dd2aaa640b4858b627f02ca84a2045b0' }).to.deep.equal(entity);
+                done();
+            }).catch(reason => {
+                throw new Error(reason);
+            });
+        });
+
 
         it('should return playlist info', (done) => {
             soundcloud.info('https://soundcloud.com/dawn-records/sets/killove-fireproof').then(entity => {
@@ -49,6 +65,24 @@ describe('ProviderSoundcloud', () => {
                     type: 'soundcloudList',
                     disableTiming: true,
                     meta: [] }).to.deep.equal(entity);
+                done();
+            }).catch(reason => {
+                throw new Error(reason);
+            });
+        });
+
+        it('should return playlist info', (done) => {
+            soundcloud.info('https://soundcloud.com/kotborealis/sets/tuhohu').then(entity => {
+                entity.meta = [];
+                expect({ duration: 517,
+                    title: 'tuhohu',
+                    thumbnail: 'https://i1.sndcdn.com/avatars-000142899520-qm47lb-large.jpg',
+                    url: 'https://soundcloud.com/kotborealis/sets/tuhohu',
+                    id: 'https://soundcloud.com/kotborealis/sets/tuhohu',
+                    type: 'soundcloudList',
+                    disableTiming: true,
+                    meta:[] }
+                ).to.deep.equal(entity);
                 done();
             }).catch(reason => {
                 throw new Error(reason);
@@ -76,6 +110,7 @@ describe('ProviderSoundcloud', () => {
 
         it('should return playlist entities', (done) => {
             soundcloud.entities('https://soundcloud.com/dawn-records/sets/killove-fireproof').then(entity => {
+                console.log(entity);
                 expect([ { duration: 137,
                     title: 'KilLove Fireproof!',
                     thumbnail: 'https://i1.sndcdn.com/artworks-000199813485-7m1i1f-t500x500.jpg',
