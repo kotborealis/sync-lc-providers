@@ -65,6 +65,21 @@ describe('ProviderFlie', () => {
             });
         });
 
+        it('should return video info', (done) => {
+            file.info('https://puu.sh/w7VaJ/dfc56701b2.mp3').then(entity => {
+                console.log(entity);
+                expect({ duration: 135,
+                    title: 'dfc56701b2.mp3',
+                    thumbnail: null,
+                    url: 'https://puu.sh/w7VaJ/dfc56701b2.mp3',
+                    id: 'https://puu.sh/w7VaJ/dfc56701b2.mp3',
+                    type: 'file',
+                    disableTiming: false,
+                    meta: { isVideo: false } }).to.deep.equal(entity);
+                done();
+            });
+        });
+
         it('should reject 404-videos', (done) => {
             file.info(file_url + "AAAAAAAAAAAAAAAAAAAA.mp3").catch(reason => {
                 expect(reason).to.equal("Not Found");
