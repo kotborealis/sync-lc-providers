@@ -19,8 +19,9 @@ describe('ProviderYoutube', () => {
 
     describe('info', () => {
         it('should return promise with video info', (done) => {
-            youtube.info('iNCRfh6dx60').then(entity => {
-                expect({
+            youtube.info('http://youtube.com/watch?v=iNCRfh6dx60').then(entity => {
+                console.log(entity);
+                    expect({
                     duration: 195,
                     title: 'ChunnHEbyou',
                     thumbnail: 'https://i.ytimg.com/vi/iNCRfh6dx60/default.jpg',
