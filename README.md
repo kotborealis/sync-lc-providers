@@ -9,6 +9,9 @@ Node.JS library to fetch info from Youtube, Soundcloud and etc.
 * Youtube (including playlists)
 * Video/audio files
 
+## !
+Right now, it always downloads a bunch of ffmpeg binaries, so the installation might look stuck for some time.
+
 ## Usage
 
 ```js
