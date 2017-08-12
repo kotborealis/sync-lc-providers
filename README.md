@@ -1,9 +1,5 @@
 # sync-lc-providers
-Node.JS library to fetch info from Yo');
-/**
-  Returns promise with video info:
-  
-**/utube, Soundcloud and etc.
+Node.JS library to fetch info from Youtube, Soundcloud and etc.
 
 ## Supported providers
 * Coub
