@@ -1,6 +1,9 @@
 const ProviderVimeo = require('../lib/providers/ProviderVimeo');
 
-const expect = require('chai').expect;
+const chai = require('chai');
+const expect = chai.expect;
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 describe('ProviderVimeo', () => {
     before(() => require('../lib/request_fixture').__fake = true);
@@ -14,27 +17,22 @@ describe('ProviderVimeo', () => {
         });
 
         it('should not parse other urls', () => {
-            //noinspection BadExpressionStatementJS
-            expect(Vimeo.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+            expect(Vimeo.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.equal(null);
         });
     });
 
     describe('info', () => {
-        it('should return video info', (done) => {
-            Vimeo.info('http://vimeo.com/115495563').then(entity => {
-                expect({
-                    duration: 230,
-                    title: '[MAD] JoJo\'s Bizarre Adventure - Part 4 - Diamond is Unbreakable',
-                    thumbnail: 'https://i.vimeocdn.com/video/501535009_120x90.jpg',
-                    url: 'https://vimeo.com/115495563',
-                    type: 'vimeo',
-                    disableTiming: false,
-                    id: '115495563'
-                }).to.deep.equal(entity);
-                done();
-            }).catch(reason => {
-                throw new Error(reason);
-            });
+        it('should return video info', async () => {
+            const entity = await Vimeo.info('http://vimeo.com/115495563');
+            expect({
+                duration: 230,
+                title: '[MAD] JoJo\'s Bizarre Adventure - Part 4 - Diamond is Unbreakable',
+                thumbnail: 'https://i.vimeocdn.com/video/501535009_120x90.jpg',
+                url: 'https://vimeo.com/115495563',
+                type: 'vimeo',
+                disableTiming: false,
+                id: '115495563'
+            }).to.deep.equal(entity);
         });
     });
 });

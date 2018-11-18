@@ -1,6 +1,9 @@
 const ProviderYoutube = require('../lib/providers/ProviderYoutube');
 
-const expect = require('chai').expect;
+const chai = require('chai');
+const expect = chai.expect;
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 describe('ProviderYoutube', () => {
     before(() => require('../lib/request_fixture').__fake = true);
@@ -18,42 +21,33 @@ describe('ProviderYoutube', () => {
     });
 
     describe('info', () => {
-        it('should return promise with video info', (done) => {
-            youtube.info('http://youtube.com/watch?v=iNCRfh6dx60').then(entity => {
-                console.log(entity);
-                    expect({
-                    duration: 195,
-                    title: 'ChunnHEbyou',
-                    thumbnail: 'https://i.ytimg.com/vi/iNCRfh6dx60/default.jpg',
-                    url: 'https://www.youtube.com/watch?v=iNCRfh6dx60',
-                    type: 'youtube',
-                    id: 'iNCRfh6dx60',
-                    disableTiming: false
-                }).to.deep.equal(entity);
-                done();
-            }).catch(reason => {
-                done();
-                throw new Error(reason);
-            });
+        it('should return promise with video info', async () => {
+            const entity = await youtube.info('http://youtube.com/watch?v=iNCRfh6dx60');
+            expect({
+                duration: 195,
+                title: 'ChunnHEbyou',
+                thumbnail: 'https://i.ytimg.com/vi/iNCRfh6dx60/default.jpg',
+                url: 'https://www.youtube.com/watch?v=iNCRfh6dx60',
+                type: 'youtube',
+                id: 'iNCRfh6dx60',
+                disableTiming: false
+            }).to.deep.equal(entity);
         });
 
 
-        it('should reject non-existing videos', (done) => {
-            youtube.info('asswecan').then(entity => {
-                done();
-            }).catch(reason => {
-                expect("Not Found").to.equal(reason);
-                done();
-            });
+        it('should reject non-existing videos', async () => {
+            await expect(youtube.info("asswecan")).to.be.rejectedWith('Not Found');
         });
 
-        it('should reject non-embeddable videos', (done) => {
-            youtube.info('https://youtu.be/E-68IxmGaoA').then(entity => {
-                done();
-            }).catch(reason => {
-                expect("Not Embeddable").to.equal(reason);
-                done();
-            });
+        it('should reject non-embeddable videos', async () => {
+            await expect(youtube.info("https://youtu.be/E-68IxmGaoA")).to.be.rejectedWith('Not Embeddable');
         });
+    });
+
+    describe('24h', () => {
+       it('should work with 24h videos', async () => {
+           const entity = await youtube.info('https://www.youtube.com/watch?v=Wd2HoTfT7N0');
+           expect(86401).to.deep.equal(entity.duration);
+       })
     });
 });

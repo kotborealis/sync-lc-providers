@@ -1,6 +1,9 @@
 const ProviderYoutubeList = require('../lib/providers/ProviderYoutubeList');
 
-const expect = require('chai').expect;
+const chai = require('chai');
+const expect = chai.expect;
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 describe('ProviderYoutubeList', () => {
     before(() => require('../lib/request_fixture').__fake = true);
@@ -14,66 +17,54 @@ describe('ProviderYoutubeList', () => {
         });
 
         it('should not parse other urls', () => {
-            //noinspection BadExpressionStatementJS
-            expect(youtube.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+            expect(youtube.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.equal(null);
         });
     });
 
     describe('info', () => {
-        it('should return promise with list info', (done) => {
-            youtube.info('https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U').then(entity => {
-                expect({
-                    duration: null,
-                    title: 'sync-lc-providers-test',
-                    thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
-                    url: 'https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
-                    type: 'youtubeList',
-                    id: 'PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
-                    disableTiming: true,
-                    meta: {count: 2}
-                }).to.deep.equal(entity);
-                done();
-            }).catch(reason => expect(reason).to.be(null));
+        it('should return promise with list info', async () => {
+            const entity = await youtube.info('https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U');
+            expect({
+                duration: null,
+                title: 'sync-lc-providers-test',
+                thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
+                url: 'https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
+                type: 'youtubeList',
+                id: 'PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U',
+                disableTiming: true,
+                meta: {count: 2}
+            }).to.deep.equal(entity);
         });
 
 
-        it('should reject non-existing videos', (done) => {
-            youtube.info('asswecan').then(entity => {
-                expect(entity).to.be(null);
-                done();
-            }).catch(reason => {
-                expect("Not Found").to.equal(reason);
-                done();
-            });
+        it('should reject non-existing videos', async () => {
+            await expect(youtube.info("asswecan")).to.be.rejectedWith('Not Found');
         });
     });
 
-    describe('entities', function(){
-        it('should return array of list entities', function(done){
-            youtube.entities('https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U').then(entities => {
-                console.log(entities);
-                expect([
-                    {
-                        duration: 60,
-                        title: 'Bonetrousleを食べたら・・・',
-                        thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
-                        url: 'https://www.youtube.com/watch?v=XgoAVRdj1HI',
-                        type: 'youtube',
-                        id: 'XgoAVRdj1HI',
-                        disableTiming: false
-                    },
-                    {
-                        duration: 93,
-                        title: 'Саигэцу',
-                        thumbnail: 'https://i.ytimg.com/vi/nPQ2K1qmUoY/default.jpg',
-                        url: 'https://www.youtube.com/watch?v=nPQ2K1qmUoY',
-                        type: 'youtube',
-                        id: 'nPQ2K1qmUoY',
-                        disableTiming: false
-                    }
-                ]).to.deep.equal(entities);
-                done();
-            }).catch(reason => console.log(reason) && expect(reason).to.be(null));
+    describe('entities', () => {
+        it('should return array of list entities', async () => {
+            const entities = await youtube.entities('https://www.youtube.com/playlist?list=PLN1mjQ-i1XV5zC72G4NyaFANSeVAIL43U');
+            expect([
+                {
+                    duration: 60,
+                    title: 'Bonetrousleを食べたら・・・',
+                    thumbnail: 'https://i.ytimg.com/vi/XgoAVRdj1HI/default.jpg',
+                    url: 'https://www.youtube.com/watch?v=XgoAVRdj1HI',
+                    type: 'youtube',
+                    id: 'XgoAVRdj1HI',
+                    disableTiming: false
+                },
+                {
+                    duration: 93,
+                    title: 'Саигэцу',
+                    thumbnail: 'https://i.ytimg.com/vi/nPQ2K1qmUoY/default.jpg',
+                    url: 'https://www.youtube.com/watch?v=nPQ2K1qmUoY',
+                    type: 'youtube',
+                    id: 'nPQ2K1qmUoY',
+                    disableTiming: false
+                }
+            ]).to.deep.equal(entities);
         });
     });
 });
