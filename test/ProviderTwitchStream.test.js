@@ -1,6 +1,9 @@
 const ProviderTwitchStream = require('../lib/providers/ProviderTwitchStream');
 
-const expect = require('chai').expect;
+const chai = require('chai');
+const expect = chai.expect;
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 describe('ProviderTwitchStream', () => {
     before(() => require('../lib/request_fixture').__fake = true);
@@ -14,28 +17,22 @@ describe('ProviderTwitchStream', () => {
         });
 
         it('should not parse other urls', () => {
-            //noinspection BadExpressionStatementJS
-            expect(twitch.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+            expect(twitch.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.equal(null);
         });
     });
 
     describe('info', () => {
-        it('should return Stream info', (done) => {
-            twitch.info('http://twitch.tv/kotborealis').then(entity => {
-                console.log(entity);
-                expect({
-                    duration: null,
-                    title: '[Next Car Game Free Technology Demo] KotBorealis',
-                    thumbnail: null,
-                    url: 'https://www.twitch.tv/kotborealis',
-                    type: 'twitchStream',
-                    id: 'kotborealis',
-                    disableTiming: true
-                }).to.deep.equal(entity);
-                done();
-            }).catch(reason => {
-                throw new Error(reason);
-            });
+        it('should return Stream info', async () => {
+            const entity = await twitch.info('http://twitch.tv/kotborealis');
+            expect({
+                duration: null,
+                title: '[Next Car Game Free Technology Demo] KotBorealis',
+                thumbnail: null,
+                url: 'https://www.twitch.tv/kotborealis',
+                type: 'twitchStream',
+                id: 'kotborealis',
+                disableTiming: true
+            }).to.deep.equal(entity);
         });
     });
 });

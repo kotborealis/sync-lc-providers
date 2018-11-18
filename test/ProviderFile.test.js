@@ -1,10 +1,9 @@
 const ProviderFile = require('../lib/providers/ProviderFile');
 
-const expect = require('chai').expect;
-
-process.on('unhandledRejection', (reason, p) => {
-    console.log('Reason: ' + reason, p);
-});
+const chai = require('chai');
+const expect = chai.expect;
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
 
 describe('ProviderFlie', () => {
     before(() => require('../lib/ffprobe_fixture').__fake = true);
@@ -23,39 +22,32 @@ describe('ProviderFlie', () => {
         });
 
         it('should not parse other urls', () => {
-            //noinspection BadExpressionStatementJS
-            expect(file.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.null;
+            expect(file.id('https://www.youtube.com/watch?v=bWieT70WK5U&index=9&list=FL2vJnHZG1z5gOynC2pY7TFQ')).to.be.equal(null);
         });
 
         it('should not parse invalid urls', () => {
-            //noinspection BadExpressionStatementJS
-            expect(file.id('http://faf.fof/ass.we.can.mp3.html')).to.be.null;
-            //noinspection BadExpressionStatementJS
-            expect(file.id('http://faf.fof/ass.we.can.mp3?asasas')).not.to.be.null;
+            expect(file.id('http://faf.fof/ass.we.can.mp3.html')).to.be.equal(null);
+            expect(file.id('http://faf.fof/ass.we.can.mp3?asasas')).not.to.be.equal(null);
         });
     });
 
     describe('info', function(){
         this.timeout(15000);
-        it('should return video info', (done) => {
-            file.info(file_url).then(entity => {
-                expect({ duration: 122,
-                    title: 'test.mp3',
-                    thumbnail: null,
-                    url: 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3',
-                    type: 'file',
-                    disableTiming: false,
-                    meta: {isVideo: false},
-                    id: 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3' }).to.deep.equal(entity);
-                done();
-            });
+        it('should return video info', async () => {
+            const entity = await file.info(file_url);
+            expect({ duration: 122,
+                title: 'test.mp3',
+                thumbnail: null,
+                url: 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3',
+                type: 'file',
+                disableTiming: false,
+                meta: {isVideo: false},
+                id: 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3'
+            }).to.deep.equal(entity);
         });
 
-        it('should reject 404-videos', (done) => {
-            file.info(file_url + "AAAAAAAAAAAAAAAAAAAA.mp3").catch(reason => {
-                expect(reason).to.equal("Not Found");
-                done();
-            });
+        it('should reject 404-videos', () => {
+            expect(file.info("asswecan")).to.be.rejectedWith('Not Found');
         });
     });
 });

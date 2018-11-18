@@ -8,10 +8,11 @@
   },
   "dependencies": {
     "@ffprobe-installer/ffprobe": "^1.0.9",
+    "chai-as-promised": "^7.1.1",
     "request": "^2.81.0"
   },
   "devDependencies": {
-    "chai": "^4.0.2",
+    "chai": "^4.2.0",
     "mocha": "^5.2.0"
   }
 }
