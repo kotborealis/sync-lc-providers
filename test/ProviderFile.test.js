@@ -51,51 +51,6 @@ describe('ProviderFlie', () => {
             });
         });
 
-        it('should return video info', (done) => {
-            file.info('https://nico.awooo.ru/files/目力先輩BB.30519482.mp4').then(entity => {
-                console.log(entity);
-                expect({ duration: 10,
-                    title: '目力先輩BB.30519482.mp4',
-                    thumbnail: null,
-                    url: 'https://nico.awooo.ru/files/目力先輩BB.30519482.mp4',
-                    id: 'https://nico.awooo.ru/files/目力先輩BB.30519482.mp4',
-                    type: 'file',
-                    disableTiming: false,
-                    meta: { isVideo: true } }).to.deep.equal(entity);
-                done();
-            });
-        });
-
-        it('should return video info', (done) => {
-            file.info('https://puu.sh/w7VaJ/dfc56701b2.mp3').then(entity => {
-                console.log(entity);
-                expect({ duration: 135,
-                    title: 'dfc56701b2.mp3',
-                    thumbnail: null,
-                    url: 'https://puu.sh/w7VaJ/dfc56701b2.mp3',
-                    id: 'https://puu.sh/w7VaJ/dfc56701b2.mp3',
-                    type: 'file',
-                    disableTiming: false,
-                    meta: { isVideo: false } }).to.deep.equal(entity);
-                done();
-            });
-        });
-
-        it('should return video info', (done) => {
-            file.info('https://nico.awooo.ru/files/%E6%8A%BC%E3%81%97%E3%81%A6%E9%81%8B%E3%81%B6HSI%E5%A7%89%E8%B2%B4BB.30065218.mp4').then(entity => {
-                console.log(entity);
-                expect({ duration: 44,
-                    title: '押して運ぶHSI姉貴BB.30065218.mp4',
-                    thumbnail: null,
-                    url: 'https://nico.awooo.ru/files/%E6%8A%BC%E3%81%97%E3%81%A6%E9%81%8B%E3%81%B6HSI%E5%A7%89%E8%B2%B4BB.30065218.mp4',
-                    id: 'https://nico.awooo.ru/files/%E6%8A%BC%E3%81%97%E3%81%A6%E9%81%8B%E3%81%B6HSI%E5%A7%89%E8%B2%B4BB.30065218.mp4',
-                    type: 'file',
-                    disableTiming: false,
-                    meta: { isVideo: true } }).to.deep.equal(entity);
-                done();
-            });
-        });
-
         it('should reject 404-videos', (done) => {
             file.info(file_url + "AAAAAAAAAAAAAAAAAAAA.mp3").catch(reason => {
                 expect(reason).to.equal("Not Found");
