@@ -44,9 +44,10 @@ describe('ProviderYoutube', () => {
         });
     });
 
-    //describe('24h', () => {
-    //   it('should work with 24h videos', (done) => {
-    //
-    //   })
-    //});
+    describe('24h', () => {
+       it('should work with 24h videos', async () => {
+           const entity = await youtube.info('https://www.youtube.com/watch?v=Wd2HoTfT7N0');
+           expect(86401).to.deep.equal(entity.duration);
+       })
+    });
 });
