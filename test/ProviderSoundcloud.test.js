@@ -6,10 +6,10 @@ const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 describe('ProviderSoundcloud', () => {
-    before(() => require('../lib/request_fixture').__fake = true);
-    after(() => require('../lib/request_fixture').__fake = false);
-
-    const soundcloud = new ProviderSoundcloud({key: 'dd2aaa640b4858b627f02ca84a2045b0'});
+    const soundcloud = new ProviderSoundcloud({
+        key: 'dd2aaa640b4858b627f02ca84a2045b0',
+        request: require('./mocks/request')
+    });
 
     describe('id', () => {
         it('should parse id from url', () => {

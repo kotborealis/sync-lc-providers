@@ -6,10 +6,9 @@ const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 describe('ProviderVimeo', () => {
-    before(() => require('../lib/request_fixture').__fake = true);
-    after(() => require('../lib/request_fixture').__fake = false);
-
-    const Vimeo = new ProviderVimeo();
+    const Vimeo = new ProviderVimeo({
+        request: require('./mocks/request')
+    });
 
     describe('id', () => {
         it('should parse id from url', () => {

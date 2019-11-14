@@ -6,10 +6,9 @@ const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 describe('ProviderCoub', () => {
-    before(() => require('../lib/request_fixture').__fake = true);
-    after(() => require('../lib/request_fixture').__fake = false);
-
-    const coub = new ProviderCoub();
+    const coub = new ProviderCoub({
+        request: require('./mocks/request')
+    });
 
     describe('id', () => {
         it('should parse id from url', () => {

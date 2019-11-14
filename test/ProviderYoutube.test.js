@@ -6,10 +6,10 @@ const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 describe('ProviderYoutube', () => {
-    before(() => require('../lib/request_fixture').__fake = true);
-    after(() => require('../lib/request_fixture').__fake = false);
-
-    const youtube = new ProviderYoutube({key: 'AIzaSyDpRpBquRTLhmifkJdNM78QgqjD0SDpkIM'});
+    const youtube = new ProviderYoutube({
+        key: 'AIzaSyDpRpBquRTLhmifkJdNM78QgqjD0SDpkIM',
+        request: require('./mocks/request')
+    });
 
     describe('id', () => {
         it('should parse id from url', () => {

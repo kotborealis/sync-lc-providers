@@ -6,10 +6,9 @@ const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 describe('ProviderFlie', () => {
-    before(() => require('../lib/ffprobe_fixture').__fake = true);
-    after(() => require('../lib/ffprobe_fixture').__fake = false);
-
-    const file = new ProviderFile();
+    const file = new ProviderFile({
+        ffprobe: require('./mocks/ffprobe')
+    });
     const file_url = 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3';
 
     describe('id', () => {

@@ -6,10 +6,10 @@ const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
 describe('ProviderTwitchStream', () => {
-    before(() => require('../lib/request_fixture').__fake = true);
-    after(() => require('../lib/request_fixture').__fake = false);
-
-    const twitch = new ProviderTwitchStream({key: 'ikvwvcz0xv1bby8aq0asm24vqckidn'});
+    const twitch = new ProviderTwitchStream({
+        key: 'ikvwvcz0xv1bby8aq0asm24vqckidn',
+        request: require('./mocks/request')
+    });
 
     describe('id', () => {
         it('should parse id from url', () => {
