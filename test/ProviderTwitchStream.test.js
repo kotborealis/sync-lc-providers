@@ -23,14 +23,14 @@ describe('ProviderTwitchStream', () => {
 
     describe('info', () => {
         it('should return Stream info', async () => {
-            const entity = await twitch.info('http://twitch.tv/kotborealis');
+            const entity = await twitch.info('https://www.twitch.tv/vansamaofficial');
             expect({
                 duration: null,
-                title: '[Next Car Game Free Technology Demo] KotBorealis',
-                thumbnail: null,
-                url: 'https://www.twitch.tv/kotborealis',
+                title: 'VansamaOfficial',
+                thumbnail: 'https://static-cdn.jtvnw.net/jtv_user_pictures/2a448e6c-35d7-4b46-ad31-6646c364bd02-profile_image-300x300.png',
+                url: 'https://twitch.tv/vansamaofficial',
                 type: 'twitchStream',
-                id: 'kotborealis',
+                id: 'vansamaofficial',
                 disableTiming: true
             }).to.deep.equal(entity);
         });
