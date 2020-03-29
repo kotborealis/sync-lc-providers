@@ -37,9 +37,17 @@ describe('ProviderYoutubeList', () => {
         });
 
 
+
+
         it('should reject non-existing videos', async () => {
             await expect(youtube.info("asswecan")).to.be.rejectedWith('Not Found');
         });
+
+	it('should work w/ ytm', async () => {
+	    const entity = await youtube.info("https://music.youtube.com/playlist?list=OLAK5uy_kz25JK3b42rQnscGuO8CbxwPXLxZUBPq4");
+
+	    expect(entity.thumbnail).to.equal(null);
+	});
     });
 
     describe('entities', () => {

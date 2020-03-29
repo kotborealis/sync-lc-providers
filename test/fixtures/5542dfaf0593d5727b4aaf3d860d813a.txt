@@ -1,0 +1,46 @@
+{
+ "kind": "youtube#playlistListResponse",
+ "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/IAiq9wFdxX8P39hLOZUJWxxTInM\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 5
+ },
+ "items": [
+  {
+   "kind": "youtube#playlist",
+   "etag": "\"ksCrgYQhtFrXgbHAhi9Fo5t0C2I/t9M-uD2fOSt4WHvn6TzKpPBWzRw\"",
+   "id": "OLAK5uy_kz25JK3b42rQnscGuO8CbxwPXLxZUBPq4",
+   "snippet": {
+    "publishedAt": "2020-03-03T20:59:08.000Z",
+    "channelId": "UCBR8-60-B28hp2BmDPdntcQ",
+    "title": "Album - More than Just a Name",
+    "description": "",
+    "thumbnails": {
+     "medium": {
+      "url": "https://i9.ytimg.com/s_p/OLAK5uy_kz25JK3b42rQnscGuO8CbxwPXLxZUBPq4/mqdefault.jpg?sqp=COit8vMFir7X7AMGCJWK-_IF&rs=AOn4CLAeRH2kGaRnjvj3rzdkLUj461S73g&v=5e5ec515",
+      "width": 180,
+      "height": 180
+     },
+     "standard": {
+      "url": "https://i9.ytimg.com/s_p/OLAK5uy_kz25JK3b42rQnscGuO8CbxwPXLxZUBPq4/sddefault.jpg?sqp=COit8vMFir7X7AMGCJWK-_IF&rs=AOn4CLBNkrVwyyCgUnQyflJf9b_jdVN34w&v=5e5ec515",
+      "width": 640,
+      "height": 640
+     },
+     "maxres": {
+      "url": "https://i9.ytimg.com/s_p/OLAK5uy_kz25JK3b42rQnscGuO8CbxwPXLxZUBPq4/maxresdefault.jpg?sqp=COit8vMFir7X7AMGCJWK-_IF&rs=AOn4CLCSLmjLegFSn8S5vpbM5Lels8UcmQ&v=5e5ec515",
+      "width": 1200,
+      "height": 1200
+     }
+    },
+    "channelTitle": "YouTube",
+    "localized": {
+     "title": "Album - More than Just a Name",
+     "description": ""
+    }
+   },
+   "contentDetails": {
+    "itemCount": 8
+   }
+  }
+ ]
+}
