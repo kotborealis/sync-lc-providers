@@ -4,7 +4,7 @@ RUN apk update && apk upgrade && \
     apk add --no-cache ffmpeg && \
     rm -rf /usr/share/ffmpeg/*.ffpreset \
            /usr/share/ffmpeg/examples \
-           /usr/bin/ffprobe \
+           /usr/bin/ffserver \
            /usr/bin/ffplay \
            /usr/bin/ffmpeg \
            /usr/bin/qt-faststart
