@@ -27,6 +27,7 @@ describe('ProviderFlie', () => {
         it('should not parse invalid urls', () => {
             expect(file.id('http://faf.fof/ass.we.can.mp3.html')).to.be.equal(null);
             expect(file.id('http://faf.fof/ass.we.can.mp3?asasas')).not.to.be.equal(null);
+            expect(file.id('obviously invalid')).to.be.equal(null);
         });
     });
 
@@ -43,10 +44,6 @@ describe('ProviderFlie', () => {
                 meta: {isVideo: false},
                 id: 'https://raw.githubusercontent.com/kotborealis/sync-lc-providers/master/test/test.mp3'
             }).to.deep.equal(entity);
-        });
-
-        it('should reject 404-videos', () => {
-            expect(file.info("asswecan")).to.be.rejectedWith('Not Found');
         });
     });
 });
