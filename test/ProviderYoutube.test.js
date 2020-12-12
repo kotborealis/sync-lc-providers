@@ -45,9 +45,17 @@ describe('ProviderYoutube', () => {
     });
 
     describe('24h', () => {
-       it('should work with 24h videos', async () => {
-           const entity = await youtube.info('https://www.youtube.com/watch?v=Wd2HoTfT7N0');
-           expect(86401).to.deep.equal(entity.duration);
-       })
+        it('should work with 24h videos', async () => {
+            const entity = await youtube.info('https://www.youtube.com/watch?v=Wd2HoTfT7N0');
+            expect(86401).to.deep.equal(entity.duration);
+        });
+    });
+
+    describe('stream', () => {
+        it('should work with dog-vtuber streams', async () => {
+            const entity = await youtube.info('https://www.youtube.com/watch?v=vtYXBBLgGuc');
+            expect(null).to.deep.equal(entity.duration);
+            expect(true).to.deep.equal(entity.disableTiming);
+        });
     });
 });
